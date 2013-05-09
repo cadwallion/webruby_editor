@@ -3,10 +3,13 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-  window.MRB = WEBRUBY()
+  window.MRB = WEBRUBY
+    print_level: 2
   
   if $("#editor")[0]
     editor = ace.edit("editor")
+    editor.getSession().setMode("ace/mode/ruby")
+    editor.setTheme("ace/theme/monokai")
     editor.commands.addCommand
       name: 'runCode',
       bindKey:
