@@ -19,5 +19,13 @@ module WebrubyEditor
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+
+    # Precompile additional assets.
+    # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
+    config.assets.precompile += %w( index.js )
+
+    config.assets.paths << Rails.root.join("vendor", "assets", "ace")
+
   end
 end
