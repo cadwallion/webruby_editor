@@ -4,6 +4,16 @@
 
 jQuery ->
   window.MRB = WEBRUBY()
+  
+  if $("#editor")[0]
+    editor = ace.edit("editor")
+    editor.commands.addCommand
+      name: 'runCode',
+      bindKey:
+        win: 'Ctrl-Enter',
+        mac: 'Command-Enter'
+      exec: (e) ->
+        MRB.run_source editor.getValue()
+      readOnly: true
 
-  window.runCode = ->
-    MRB.run_source editor.getValue()
+    window.editor = editor
