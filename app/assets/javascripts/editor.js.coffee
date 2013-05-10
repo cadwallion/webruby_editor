@@ -1,15 +1,14 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
+window.lines = []
+
+window.Module = {}
+window.Module['print'] = (x) ->
+  window.lines.push x
+  console.log "LINES", x
 
 jQuery ->
-
-  window.lines = []
-
-  Module['print'] = (x) ->
-    window.lines.push x
-    console.log "LINES", x
-
   window.MRB = WEBRUBY
     print_level: 2
 
