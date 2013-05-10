@@ -16,3 +16,4 @@
 //= require_tree .
 //= require ace
 //= require keybinding-vim
+//= require keybinding-emacs
