@@ -34,6 +34,17 @@ a {
     width: 100%;
   }
 
+  #drawer {
+    min-height: 800px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 80px;
+
+    #files a {
+      display: block;
+    }
+  }
+
   #add_file {
     color: #fff;
     float: left;
@@ -50,7 +61,7 @@ a {
 
     #editor {
       bottom: 0;
-      left: 0;
+      left: 82px;
       position: absolute;
       right: 0;
       top: 100px;
@@ -59,10 +70,10 @@ a {
   }
 
   #output-wrapper {
-    clear: both;
-    position: relative;
-    left: 670px;
-    top: 10px;
+    position: absolute;
+    left: 772px;
+    top: 100px;
+    width: 500px;
 
     #output {
       color: #fff;
