@@ -18,9 +18,9 @@ jQuery ->
       window.lines.push line
 
 
-  
-  if $("#editor")[0]
-    editor = ace.edit("editor")
+
+  if $("#console")[0]
+    editor = ace.edit("console")
     editor.getSession().setMode("ace/mode/ruby")
     editor.setTheme("ace/theme/monokai")
     editor.commands.addCommand

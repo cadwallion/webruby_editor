@@ -8,4 +8,14 @@
   right: 0;
   bottom: 0;
   left: 0;
+
+  #console {
+    @extend #editor;
+    width: 50%;
+  }
+
+  #output {
+    @extend #editor;
+    width: 50%;
+  }
 }
