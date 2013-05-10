@@ -2,20 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  background: #272822;
+}
+
+#header {
+  height: 60px;
+  width: 100%;
+  background: no-repeat url('/assets/logo.png');
+}
+
 #editor {
   position: absolute;
-  top: 0;
+  top: 60px;
   right: 0;
   bottom: 0;
   left: 0;
+  margin: 20px 0 0 0;
 
   #console {
     @extend #editor;
+    top: 0;
     width: 50%;
+    float: left;
+    margin: 0;
   }
 
   #output {
+    font-family: 'Monaco','Menlo','Ubuntu Mono','Consolas','source-code-pro',monospace;
+    font-size: 12px;
+    color: white;
+    height: 100%;
+    background: #272822;
     width: 50%;
     float: right;
+    margin: 0;
   }
 }
