@@ -14,6 +14,7 @@ jQuery ->
     print_level: 1
 
   window.EditSession = ace.require("ace/edit_session").EditSession
+  window.UndoManager = ace.require("ace/undomanager").UndoManager
 
   MRB.run_source($('script[type="text/ruby"]').text())
 
@@ -57,6 +58,7 @@ jQuery ->
         MRB.run_source editor.getValue()
         renderOutput()
 
+    #needs some serious refactoring
     editor.commands.addCommand
       name: 'tab1',
       bindKey:
@@ -66,6 +68,7 @@ jQuery ->
         filename = $(".session_tab[data-order='1']").data('filename')
         next_session = sessions[filename]
         editor.setSession(next_session)
+        next_session.setUndoManager new UndoManager()
         return false
 
     editor.commands.addCommand
@@ -77,6 +80,7 @@ jQuery ->
         filename = $(".session_tab[data-order='2']").data('filename')
         next_session = sessions[filename]
         editor.setSession(next_session)
+        next_session.setUndoManager new UndoManager()
         return false
 
     editor.commands.addCommand
@@ -88,6 +92,7 @@ jQuery ->
         filename = $(".session_tab[data-order='3']").data('filename')
         next_session = sessions[filename]
         editor.setSession(next_session)
+        next_session.setUndoManager new UndoManager()
         return false
 
     editor.commands.addCommand
@@ -99,6 +104,7 @@ jQuery ->
         filename = $(".session_tab[data-order='4']").data('filename')
         next_session = sessions[filename]
         editor.setSession(next_session)
+        next_session.setUndoManager new UndoManager()
         return false
 
     editor.commands.addCommand
@@ -110,6 +116,7 @@ jQuery ->
         filename = $(".session_tab[data-order='5']").data('filename')
         next_session = sessions[filename]
         editor.setSession(next_session)
+        next_session.setUndoManager new UndoManager()
         return false
 
     editor.commands.addCommand
@@ -121,6 +128,7 @@ jQuery ->
         filename = $(".session_tab[data-order='6']").data('filename')
         next_session = sessions[filename]
         editor.setSession(next_session)
+        next_session.setUndoManager new UndoManager()
         return false
 
     editor.commands.addCommand
@@ -132,6 +140,7 @@ jQuery ->
         filename = $(".session_tab[data-order='7']").data('filename')
         next_session = sessions[filename]
         editor.setSession(next_session)
+        next_session.setUndoManager new UndoManager()
         return false
 
     editor.commands.addCommand
@@ -143,6 +152,7 @@ jQuery ->
         filename = $(".session_tab[data-order='8']").data('filename')
         next_session = sessions[filename]
         editor.setSession(next_session)
+        next_session.setUndoManager new UndoManager()
         return false
 
     editor.commands.addCommand
@@ -154,6 +164,7 @@ jQuery ->
         filename = $(".session_tab:last").data('filename')
         next_session = sessions[filename]
         editor.setSession(next_session)
+        next_session.setUndoManager new UndoManager()
         return false
 
       readOnly: true
@@ -168,6 +179,7 @@ jQuery ->
     filename = "untitled#{session_id}.rb"
     window.sessions[filename] = new_session
     editor.setSession new_session
+    new_session.setUndoManager new UndoManager()
     $('#files').append("<a class='session_tab' data-filename='#{filename}' data-order='#{session_id}' href='#'>#{filename}</a>")
     $(".session_tab").each ->
       $(@).removeClass("current")
