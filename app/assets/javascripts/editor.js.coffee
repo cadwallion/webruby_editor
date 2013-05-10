@@ -55,12 +55,12 @@ jQuery ->
     window.editor = editor
 
   $('#add_file').click ->
-    console.log "FUCK"
     new_session = new EditSession('')
     new_session.setMode("ace/mode/ruby")
-    window.sessions['untitled'] = new_session
+    filename = "untitled#{Object.keys(sessions).length}"
+    window.sessions[filename] = new_session
     editor.setSession new_session
-    $('#files').append("<a class='session_tab' href='#' data-filename='untitled'>Untitled</a>")
+    $('#files').append("<a class='session_tab' href='#' data-filename='#{filename}'>#{filename}</a>")
 
     return false
 
