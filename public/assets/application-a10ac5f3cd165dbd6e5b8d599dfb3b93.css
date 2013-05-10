@@ -1,0 +1,79 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+body {
+  background: #272822;
+  color: #fff;
+  font-family: 'Monaco','Menlo','Ubuntu Mono','Consolas','source-code-pro',monospace;
+  font-size: 12px;
+  margin: 0;
+  padding: 0; }
+
+a {
+  color: #fff;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+  a.current {
+    background: #2f3129;
+    font-weight: bold;
+    text-decoration: underline; }
+
+#header {
+  background: no-repeat url("/assets/logo.png");
+  height: 60px;
+  width: 100%; }
+
+#environment #toolbar {
+  clear: both;
+  display: inline-block;
+  height: 30px;
+  margin: 0 10px;
+  overflow-x: auto;
+  overflow-y: hidden; }
+  #environment #toolbar #keybinding {
+    display: inline-block; }
+  #environment #toolbar #run {
+    background: green;
+    border: none;
+    color: #fff;
+    display: inline-block; }
+#environment #drawer {
+  overflow: hidden;
+  width: 100px; }
+  #environment #drawer #files a, #environment #drawer #add a {
+    display: block; }
+#environment #add_file {
+  float: left; }
+#environment .session_tab, #environment #add_file {
+  padding: 5px; }
+#environment #editor-wrapper {
+  float: left;
+  width: 664px; }
+  #environment #editor-wrapper #editor {
+    bottom: 0;
+    left: 100px;
+    position: absolute;
+    right: 0;
+    top: 100px;
+    width: 664px; }
+#environment #output-wrapper {
+  position: absolute;
+  left: 792px;
+  top: 100px;
+  width: 500px; }
+  #environment #output-wrapper #output {
+    height: 100%; }
+    #environment #output-wrapper #output p {
+      margin: 0; }
