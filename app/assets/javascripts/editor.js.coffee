@@ -195,6 +195,7 @@ jQuery ->
     next_session = sessions[filename]
     editor.setSession(next_session)
     editor.focus()
+    $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
     $(".session_tab").each ->
       $(@).removeClass("current")
     $(@).addClass("current")
