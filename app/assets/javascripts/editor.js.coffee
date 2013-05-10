@@ -45,6 +45,18 @@ jQuery ->
   window.MRB = WEBRUBY
     print_level: 1
 
+  window.switchTab = (num) ->
+    filename = $(".session_tab[data-order='#{num}']").data('filename')
+    next_session = sessions[filename]
+    editor.setSession(next_session)
+    next_session.setUndoManager new UndoManager()
+    $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
+    $(".session_tab").each ->
+      $(@).removeClass("current")
+    $(".session_tab[data-filename='#{filename}']").addClass("current")
+
+
+
   $(document).ready ->
     editor.focus()
     interpretCode editor.getValue()
@@ -71,11 +83,7 @@ jQuery ->
         win: 'Ctrl-1',
         mac: 'Ctrl-1'
       exec: (e) ->
-        filename = $(".session_tab[data-order='1']").data('filename')
-        next_session = sessions[filename]
-        editor.setSession(next_session)
-        next_session.setUndoManager new UndoManager()
-        $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
+        switchTab(1)
         return false
 
     editor.commands.addCommand
@@ -84,11 +92,7 @@ jQuery ->
         win: 'Ctrl-2',
         mac: 'Ctrl-2'
       exec: (e) ->
-        filename = $(".session_tab[data-order='2']").data('filename')
-        next_session = sessions[filename]
-        editor.setSession(next_session)
-        next_session.setUndoManager new UndoManager()
-        $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
+        switchTab(2)
         return false
 
     editor.commands.addCommand
@@ -97,11 +101,7 @@ jQuery ->
         win: 'Ctrl-3',
         mac: 'Ctrl-3'
       exec: (e) ->
-        filename = $(".session_tab[data-order='3']").data('filename')
-        next_session = sessions[filename]
-        editor.setSession(next_session)
-        next_session.setUndoManager new UndoManager()
-        $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
+        switchTab(3)
         return false
 
     editor.commands.addCommand
@@ -110,11 +110,7 @@ jQuery ->
         win: 'Ctrl-4',
         mac: 'Ctrl-4'
       exec: (e) ->
-        filename = $(".session_tab[data-order='4']").data('filename')
-        next_session = sessions[filename]
-        editor.setSession(next_session)
-        next_session.setUndoManager new UndoManager()
-        $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
+        switchTab(4)
         return false
 
     editor.commands.addCommand
@@ -123,11 +119,7 @@ jQuery ->
         win: 'Ctrl-5',
         mac: 'Ctrl-5'
       exec: (e) ->
-        filename = $(".session_tab[data-order='5']").data('filename')
-        next_session = sessions[filename]
-        editor.setSession(next_session)
-        next_session.setUndoManager new UndoManager()
-        $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
+        switchTab(5)
         return false
 
     editor.commands.addCommand
@@ -136,11 +128,7 @@ jQuery ->
         win: 'Ctrl-6',
         mac: 'Ctrl-6'
       exec: (e) ->
-        filename = $(".session_tab[data-order='6']").data('filename')
-        next_session = sessions[filename]
-        editor.setSession(next_session)
-        next_session.setUndoManager new UndoManager()
-        $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
+        switchTab(6)
         return false
 
     editor.commands.addCommand
@@ -149,11 +137,7 @@ jQuery ->
         win: 'Ctrl-7',
         mac: 'Ctrl-7'
       exec: (e) ->
-        filename = $(".session_tab[data-order='7']").data('filename')
-        next_session = sessions[filename]
-        editor.setSession(next_session)
-        next_session.setUndoManager new UndoManager()
-        $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
+        switchTab(7)
         return false
 
     editor.commands.addCommand
@@ -162,11 +146,7 @@ jQuery ->
         win: 'Ctrl-8',
         mac: 'Ctrl-8'
       exec: (e) ->
-        filename = $(".session_tab[data-order='8']").data('filename')
-        next_session = sessions[filename]
-        editor.setSession(next_session)
-        next_session.setUndoManager new UndoManager()
-        $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
+        switchTab(8)
         return false
 
     editor.commands.addCommand
@@ -180,6 +160,9 @@ jQuery ->
         editor.setSession(next_session)
         next_session.setUndoManager new UndoManager()
         $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
+        $(".session_tab").each ->
+          $(@).removeClass("current")
+        $(".session_tab[data-filename='#{filename}']").addClass("current")
         return false
 
     editor.commands.addCommand
