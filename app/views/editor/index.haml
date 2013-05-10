@@ -1,9 +1,13 @@
 #environment
   #toolbar
-    Keybinding:
-    %a{class: 'bind current', id: 'none', href: '#'} None
-    %a{class: 'bind', id: 'vim', href: '#'} Vim
-    %a{class: 'bind', id: 'emacs', href: '#'} Emacs
+    #keybinding
+      Keybinding:
+      %a{class: 'bind current', id: 'none', href: '#'} None
+      %a{class: 'bind', id: 'vim', href: '#'} Vim
+      %a{class: 'bind', id: 'emacs', href: '#'} Emacs
+    #run
+      %button{id: 'run'} Run
+
   #drawer
     #add
       %a{id: 'add_file', href: '#' } Add File

@@ -32,11 +32,23 @@ a {
 
   #toolbar {
     clear: both;
+    display: inline-block;
     height: 30px;
     margin: 0 10px;
     overflow-x: auto;
     overflow-y: hidden;
     width: 100%;
+
+    #keybinding {
+      display: inline-block;
+    }
+
+    #run {
+      background: green;
+      border: none;
+      color: #fff;
+      display: inline-block;
+    }
   }
 
   #drawer {

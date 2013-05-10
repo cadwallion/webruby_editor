@@ -39,6 +39,10 @@ jQuery ->
     MRB.run_source editor.getValue()
     renderOutput()
 
+  $("#run").click ->
+    MRB.run_source editor.getValue()
+    renderOutput()
+
   if $("#editor")[0]
     editor = ace.edit("editor")
     editor.getSession().setMode("ace/mode/ruby")
