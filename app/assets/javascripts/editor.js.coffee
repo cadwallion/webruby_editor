@@ -18,7 +18,7 @@ jQuery ->
       $("#output").append("<p>#{lines[index]}</p>")
 
   window.resetOutput = ->
-    $("#output").html('')
+    $("#output").html(' ')
 
   window.renderOutput = ->
     resetOutput()
@@ -36,6 +36,7 @@ jQuery ->
         win: 'Ctrl-Enter',
         mac: 'Command-Enter'
       exec: (e) ->
+        window.lines = []
         MRB.run_source editor.getValue()
         renderOutput()
 
