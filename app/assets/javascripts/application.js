@@ -17,4 +17,3 @@
 //= require ace
 //= require keybinding-vim
 //= require keybinding-emacs
-//= require jquery.ui.all
