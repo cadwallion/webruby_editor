@@ -13,9 +13,16 @@ jQuery ->
     print_level: 2
 
 
-  window.addOutput = (lines) ->
-    lines.each (line) ->
-      window.lines.push line
+  window.addOutput = ->
+    $(lines).each (index) ->
+      $("#output").append("<p>#{lines[index]}</p>")
+
+  window.resetOutput = ->
+    $("#output").html('')
+
+  window.renderOutput = ->
+    resetOutput()
+    addOutput()
 
 
 
@@ -30,6 +37,7 @@ jQuery ->
         mac: 'Command-Enter'
       exec: (e) ->
         MRB.run_source editor.getValue()
+        renderOutput()
 
       readOnly: true
 
