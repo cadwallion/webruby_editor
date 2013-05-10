@@ -69,7 +69,7 @@ jQuery ->
     editor.getSession().setMode("ace/mode/ruby")
     editor.setTheme("ace/theme/monokai")
     editor.commands.addCommand
-      eindKey:
+      bindKey:
         win: 'Ctrl-Enter',
         mac: 'Ctrl-Enter'
       exec: (e) ->
