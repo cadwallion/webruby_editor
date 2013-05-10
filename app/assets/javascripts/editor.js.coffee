@@ -33,8 +33,8 @@ jQuery ->
 
 
 
-  if $("#console")[0]
-    editor = ace.edit("console")
+  if $("#editor")[0]
+    editor = ace.edit("editor")
     editor.getSession().setMode("ace/mode/ruby")
     editor.setTheme("ace/theme/monokai")
     editor.commands.addCommand

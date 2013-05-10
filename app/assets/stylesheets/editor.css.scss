@@ -7,35 +7,45 @@ body {
 }
 
 #header {
+  background: no-repeat url('/assets/logo.png');
   height: 60px;
   width: 100%;
-  background: no-repeat url('/assets/logo.png');
 }
 
-#editor {
-  position: absolute;
-  top: 60px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: 20px 0 0 0;
+#environment {
 
-  #console {
-    @extend #editor;
-    top: 0;
-    width: 50%;
+  #editor-wrapper {
     float: left;
-    margin: 0;
+    width: 50%;
+
+    #editor {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 60px;
+      width: 50%;
+    }
   }
 
-  #output {
-    font-family: 'Monaco','Menlo','Ubuntu Mono','Consolas','source-code-pro',monospace;
-    font-size: 12px;
-    color: white;
-    height: 100%;
-    background: #272822;
-    width: 50%;
+  #output-wrapper {
     float: right;
-    margin: 0;
+    width: 50%;
+
+    #output {
+      color: white;
+      float: right;
+      font-family: 'Monaco','Menlo','Ubuntu Mono','Consolas','source-code-pro',monospace;
+      font-size: 12px;
+      height: 100%;
+      position: absolute;
+      right: 0px;
+      top: 60px;
+      width: 50%;
+
+      p {
+        margin: 0;
+      }
+    }
   }
 }
