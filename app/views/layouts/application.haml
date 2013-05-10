@@ -6,6 +6,9 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = javascript_include_tag "ace"
     = csrf_meta_tags
+    %script{type: 'text/ruby'}
+      =raw "def require(file); puts \"REQUIRED \#{file}\"; end"
+
   %body
     #header
     = yield

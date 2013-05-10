@@ -10,8 +10,9 @@ window.Module['print'] = (x) ->
 
 jQuery ->
   window.MRB = WEBRUBY
-    print_level: 2
+    print_level: 1
 
+  MRB.run_source($('script[type="text/ruby"]').text())
 
   window.addOutput = ->
     $(lines).each (index) ->
