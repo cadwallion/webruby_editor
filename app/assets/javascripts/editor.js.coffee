@@ -7,7 +7,6 @@ window.sessions = {}
 window.Module = {}
 window.Module['print'] = (x) ->
   window.lines.push x
-  console.log "LINES", x
 
 jQuery ->
   window.MRB = WEBRUBY
@@ -40,8 +39,13 @@ jQuery ->
     interpretCode editor.getValue()
 
   window.interpretCode = (code) ->
-    MRB.run_source code
+    result = MRB.run_source code
     renderOutput()
+
+  window.MRB = WEBRUBY
+    print_level: 1
+
+  interpretCode $('script[type="text/ruby"]').text()
 
 
   if $("#editor")[0]
