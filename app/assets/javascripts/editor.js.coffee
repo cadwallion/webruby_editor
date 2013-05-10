@@ -35,6 +35,11 @@ jQuery ->
     resetOutput()
     addOutput()
 
+  window.interpretCode = (code) ->
+    MRB.run_source code
+    renderOutput()
+
+
   if $("#editor")[0]
     editor = ace.edit("editor")
     editor.getSession().setMode("ace/mode/ruby")
@@ -46,8 +51,7 @@ jQuery ->
         mac: 'Command-Enter'
       exec: (e) ->
         window.lines = []
-        MRB.run_source editor.getValue()
-        renderOutput()
+        interpretCode e.getValue()
 
       readOnly: true
 

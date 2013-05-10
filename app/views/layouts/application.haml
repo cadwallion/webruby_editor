@@ -7,7 +7,7 @@
     = javascript_include_tag "ace"
     = csrf_meta_tags
     %script{type: 'text/ruby'}
-      =raw "def require(file); puts \"REQUIRED \#{file}\"; end"
+      =raw "def require(file); root_object = MrubyJs.get_root_object; session = root_object.sessions[file]; result = session.call('getValue'); root_object.console.call('log', result); root_object.call('interpretCode', result); return result ; end"
 
   %body
     #header
