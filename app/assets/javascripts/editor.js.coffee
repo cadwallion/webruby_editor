@@ -74,6 +74,7 @@ jQuery ->
         next_session = sessions[filename]
         editor.setSession(next_session)
         next_session.setUndoManager new UndoManager()
+        $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
         return false
 
     editor.commands.addCommand
@@ -86,6 +87,7 @@ jQuery ->
         next_session = sessions[filename]
         editor.setSession(next_session)
         next_session.setUndoManager new UndoManager()
+        $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
         return false
 
     editor.commands.addCommand
@@ -98,6 +100,7 @@ jQuery ->
         next_session = sessions[filename]
         editor.setSession(next_session)
         next_session.setUndoManager new UndoManager()
+        $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
         return false
 
     editor.commands.addCommand
@@ -110,6 +113,7 @@ jQuery ->
         next_session = sessions[filename]
         editor.setSession(next_session)
         next_session.setUndoManager new UndoManager()
+        $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
         return false
 
     editor.commands.addCommand
@@ -122,6 +126,7 @@ jQuery ->
         next_session = sessions[filename]
         editor.setSession(next_session)
         next_session.setUndoManager new UndoManager()
+        $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
         return false
 
     editor.commands.addCommand
@@ -134,6 +139,7 @@ jQuery ->
         next_session = sessions[filename]
         editor.setSession(next_session)
         next_session.setUndoManager new UndoManager()
+        $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
         return false
 
     editor.commands.addCommand
@@ -146,6 +152,7 @@ jQuery ->
         next_session = sessions[filename]
         editor.setSession(next_session)
         next_session.setUndoManager new UndoManager()
+        $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
         return false
 
     editor.commands.addCommand
@@ -158,6 +165,7 @@ jQuery ->
         next_session = sessions[filename]
         editor.setSession(next_session)
         next_session.setUndoManager new UndoManager()
+        $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
         return false
 
     editor.commands.addCommand
@@ -170,6 +178,7 @@ jQuery ->
         next_session = sessions[filename]
         editor.setSession(next_session)
         next_session.setUndoManager new UndoManager()
+        $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
         return false
 
       readOnly: true
@@ -187,6 +196,7 @@ jQuery ->
     new_session.setUndoManager new UndoManager()
     editor.focus()
     $('#files').append("<a class='session_tab' data-filename='#{filename}' data-order='#{session_id}' href='#' title='#{filename}'>#{filename}</a>")
+    $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
     $(".session_tab").each ->
       $(@).removeClass("current")
     $(".session_tab[data-filename='#{filename}']").addClass("current")
