@@ -36,13 +36,13 @@ jQuery ->
     resetOutput()
     addOutput()
 
-  $(document).ready ->
-    MRB.run_source editor.getValue()
+  $("#run").click ->
+    interpretCode editor.getValue()
+
+  window.interpretCode = (code) ->
+    MRB.run_source code
     renderOutput()
 
-  $("#run").click ->
-    MRB.run_source editor.getValue()
-    renderOutput()
 
   if $("#editor")[0]
     editor = ace.edit("editor")
@@ -55,8 +55,7 @@ jQuery ->
         mac: 'Command-Enter'
       exec: (e) ->
         window.lines = []
-        MRB.run_source editor.getValue()
-        renderOutput()
+        interpretCode e.getValue()
 
     #needs some serious refactoring
     editor.commands.addCommand
