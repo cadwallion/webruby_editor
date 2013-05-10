@@ -3,8 +3,22 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
+
+  window.lines = []
+
+  Module['print'] = (x) ->
+    window.lines.push x
+    console.log "LINES", x
+
   window.MRB = WEBRUBY
     print_level: 2
+
+
+  window.addOutput = (lines) ->
+    lines.each (line) ->
+      window.lines.push line
+
+
   
   if $("#editor")[0]
     editor = ace.edit("editor")
@@ -17,6 +31,7 @@ jQuery ->
         mac: 'Command-Enter'
       exec: (e) ->
         MRB.run_source editor.getValue()
+
       readOnly: true
 
     window.editor = editor
