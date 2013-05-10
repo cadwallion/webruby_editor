@@ -18,7 +18,9 @@ a {
    text-decoration: underline;
   }
   &.current {
+    background: #2f3129;
     font-weight: bold;
+    text-decoration: underline;
   }
 }
 
@@ -55,8 +57,10 @@ a {
     overflow: hidden;
     width: 100px;
 
-    #files a {
-      display: block;
+    #files, #add {
+      a {
+        display: block;
+      }
     }
   }
 
@@ -64,7 +68,7 @@ a {
     float: left;
   }
 
-  .session_tab {
+  .session_tab, #add_file {
     padding: 5px;
   }
 
@@ -74,7 +78,7 @@ a {
 
     #editor {
       bottom: 0;
-      left: 102px;
+      left: 100px;
       position: absolute;
       right: 0;
       top: 100px;

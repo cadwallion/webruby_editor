@@ -193,6 +193,7 @@ jQuery ->
     filename = $(@).data('filename')
     next_session = sessions[filename]
     editor.setSession(next_session)
+    focus()
     $(".session_tab").each ->
       $(@).removeClass("current")
     $(@).addClass("current")
