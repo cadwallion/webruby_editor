@@ -50,6 +50,21 @@ a {
       color: #fff;
       display: inline-block;
     }
+
+    #halp {
+      display: inline-block;
+    }
+
+    #shortcuts {
+      background: #2f3129;
+      border: 1px solid #fff;
+      display: none;
+      left: 252px;
+      position: absolute;
+      top: 20px;
+      width: 200px;
+      z-index: 0;
+    }
   }
 
   #drawer {

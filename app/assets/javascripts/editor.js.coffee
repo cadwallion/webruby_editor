@@ -239,3 +239,11 @@ jQuery ->
       $(@).removeClass("current")
     $(@).addClass("current")
     return false
+
+  $('#show_shortcuts').click ->
+    $('#shortcuts').toggle()
+    return false
+
+  $('#shortcuts').click ->
+    $('#shortcuts').toggle()
+    return false
