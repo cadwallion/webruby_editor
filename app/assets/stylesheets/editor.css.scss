@@ -2,17 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#header {
-  height: 60px;
-  width: 100%;
-  background: no-repeat url('/assets/logo.png');
-}
-
 #editor {
   position: absolute;
-  top: 60px;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  margin: 20px 0 0 0;
 }
