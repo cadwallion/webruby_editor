@@ -3,9 +3,10 @@ module EditorHelper
     <<-EOF
       def require(file)
         root_object = MrubyJs.get_root_object
-        session = root_object.sessions[file]
+        session_name = file + '.rb'
+        session = root_object.sessions[session_name]
         code = session.call('getValue')
-        eval(code)
+        root_object.interpretCode(code)
       end
     EOF
   end
