@@ -71,7 +71,7 @@ jQuery ->
     editor.commands.addCommand
       eindKey:
         win: 'Ctrl-Enter',
-        mac: 'Command-Enter'
+        mac: 'Ctrl-Enter'
       exec: (e) ->
         window.lines = []
         interpretCode e.getValue()
