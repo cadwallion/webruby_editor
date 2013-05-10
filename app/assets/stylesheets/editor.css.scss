@@ -37,10 +37,8 @@ a {
   }
 
   #drawer {
-    min-height: 800px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    width: 80px;
+    overflow: hidden;
+    width: 100px;
 
     #files a {
       display: block;
@@ -61,7 +59,7 @@ a {
 
     #editor {
       bottom: 0;
-      left: 82px;
+      left: 102px;
       position: absolute;
       right: 0;
       top: 100px;
@@ -71,7 +69,7 @@ a {
 
   #output-wrapper {
     position: absolute;
-    left: 772px;
+    left: 792px;
     top: 100px;
     width: 500px;
 

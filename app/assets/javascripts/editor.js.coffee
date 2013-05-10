@@ -49,18 +49,118 @@ jQuery ->
         MRB.run_source editor.getValue()
         renderOutput()
 
+    editor.commands.addCommand
+      name: 'tab1',
+      bindKey:
+        win: 'Ctrl-1',
+        mac: 'Ctrl-1'
+      exec: (e) ->
+        filename = $(".session_tab[data-order='1']").data('filename')
+        next_session = sessions[filename]
+        editor.setSession(next_session)
+        return false
+
+    editor.commands.addCommand
+      name: 'tab2',
+      bindKey:
+        win: 'Ctrl-2',
+        mac: 'Ctrl-2'
+      exec: (e) ->
+        filename = $(".session_tab[data-order='2']").data('filename')
+        next_session = sessions[filename]
+        editor.setSession(next_session)
+        return false
+
+    editor.commands.addCommand
+      name: 'tab3',
+      bindKey:
+        win: 'Ctrl-3',
+        mac: 'Ctrl-3'
+      exec: (e) ->
+        filename = $(".session_tab[data-order='3']").data('filename')
+        next_session = sessions[filename]
+        editor.setSession(next_session)
+        return false
+
+    editor.commands.addCommand
+      name: 'tab4',
+      bindKey:
+        win: 'Ctrl-4',
+        mac: 'Ctrl-4'
+      exec: (e) ->
+        filename = $(".session_tab[data-order='4']").data('filename')
+        next_session = sessions[filename]
+        editor.setSession(next_session)
+        return false
+
+    editor.commands.addCommand
+      name: 'tab5',
+      bindKey:
+        win: 'Ctrl-5',
+        mac: 'Ctrl-5'
+      exec: (e) ->
+        filename = $(".session_tab[data-order='5']").data('filename')
+        next_session = sessions[filename]
+        editor.setSession(next_session)
+        return false
+
+    editor.commands.addCommand
+      name: 'tab6',
+      bindKey:
+        win: 'Ctrl-6',
+        mac: 'Ctrl-6'
+      exec: (e) ->
+        filename = $(".session_tab[data-order='6']").data('filename')
+        next_session = sessions[filename]
+        editor.setSession(next_session)
+        return false
+
+    editor.commands.addCommand
+      name: 'tab7',
+      bindKey:
+        win: 'Ctrl-7',
+        mac: 'Ctrl-7'
+      exec: (e) ->
+        filename = $(".session_tab[data-order='7']").data('filename')
+        next_session = sessions[filename]
+        editor.setSession(next_session)
+        return false
+
+    editor.commands.addCommand
+      name: 'tab8',
+      bindKey:
+        win: 'Ctrl-8',
+        mac: 'Ctrl-8'
+      exec: (e) ->
+        filename = $(".session_tab[data-order='8']").data('filename')
+        next_session = sessions[filename]
+        editor.setSession(next_session)
+        return false
+
+    editor.commands.addCommand
+      name: 'tab9',
+      bindKey:
+        win: 'Ctrl-9',
+        mac: 'Ctrl-9'
+      exec: (e) ->
+        filename = $(".session_tab:last").data('filename')
+        next_session = sessions[filename]
+        editor.setSession(next_session)
+        return false
+
       readOnly: true
 
-    window.sessions['default.rb'] = editor.getSession()
+    window.sessions['untitled1.rb'] = editor.getSession()
     window.editor = editor
 
   $('#add_file').click ->
     new_session = new EditSession('')
     new_session.setMode("ace/mode/ruby")
-    filename = "untitled#{Object.keys(sessions).length}"
+    session_id = Object.keys(sessions).length+1
+    filename = "untitled#{session_id}.rb"
     window.sessions[filename] = new_session
     editor.setSession new_session
-    $('#files').append("<a class='session_tab' href='#' data-filename='#{filename}'>#{filename}</a>")
+    $('#files').append("<a class='session_tab' href='#' data-order='#{session_id}' data-filename='#{filename}'>#{filename}</a>")
 
     return false
 
