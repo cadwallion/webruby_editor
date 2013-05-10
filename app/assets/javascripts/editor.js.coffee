@@ -160,8 +160,10 @@ jQuery ->
     filename = "untitled#{session_id}.rb"
     window.sessions[filename] = new_session
     editor.setSession new_session
-    $('#files').append("<a class='session_tab' href='#' data-order='#{session_id}' data-filename='#{filename}'>#{filename}</a>")
-
+    $('#files').append("<a class='session_tab' data-filename='#{filename}' data-order='#{session_id}' href='#'>#{filename}</a>")
+    $(".session_tab").each ->
+      $(@).removeClass("current")
+    $(".session_tab[data-filename='#{filename}']").addClass("current")
     return false
 
   $(document).on 'click', '.session_tab', ->
