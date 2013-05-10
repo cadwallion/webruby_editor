@@ -46,6 +46,7 @@ jQuery ->
     print_level: 1
 
   $(document).ready ->
+    editor.focus()
     interpretCode editor.getValue()
 
   interpretCode $('script[type="text/ruby"]').text()
@@ -180,6 +181,28 @@ jQuery ->
         next_session.setUndoManager new UndoManager()
         $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
         return false
+
+    editor.commands.addCommand
+      name: 'addfile',
+      bindKey:
+        win: 'Ctrl-0',
+        mac: 'Ctrl-0'
+      exec: (e) ->
+        new_session = new EditSession('')
+        new_session.setMode("ace/mode/ruby")
+        session_id = Object.keys(sessions).length+1
+        filename = "untitled#{session_id}.rb"
+        window.sessions[filename] = new_session
+        editor.setSession new_session
+        new_session.setUndoManager new UndoManager()
+        editor.focus()
+        $('#files').append("<a class='session_tab' data-filename='#{filename}' data-order='#{session_id}' href='#' title='#{filename}'>#{filename}</a>")
+        $("#viewing").html("<h1 class='current_filename'>#{filename}</h1>")
+        $(".session_tab").each ->
+          $(@).removeClass("current")
+        $(".session_tab[data-filename='#{filename}']").addClass("current")
+        return false
+
 
       readOnly: true
 
