@@ -184,7 +184,7 @@ jQuery ->
     editor.setSession new_session
     new_session.setUndoManager new UndoManager()
     editor.focus()
-    $('#files').append("<a class='session_tab' data-filename='#{filename}' data-order='#{session_id}' href='#'>#{filename}</a>")
+    $('#files').append("<a class='session_tab' data-filename='#{filename}' data-order='#{session_id}' href='#' title='#{filename}'>#{filename}</a>")
     $(".session_tab").each ->
       $(@).removeClass("current")
     $(".session_tab[data-filename='#{filename}']").addClass("current")
