@@ -172,14 +172,23 @@ jQuery ->
     editor.setSession(next_session)
     return false
 
+  $('#none').click ->
+    editor.setKeyboardHandler()
+    $("#toolbar a.bind").each ->
+      $(@).removeClass("current")
+    $(@).addClass("current")
+    return false
+
   $('#vim').click ->
     editor.setKeyboardHandler(ace.require("ace/keyboard/vim").handler)
+    $("#toolbar a.bind").each ->
+      $(@).removeClass("current")
+    $(@).addClass("current")
     return false
 
   $('#emacs').click ->
     editor.setKeyboardHandler(ace.require("ace/keyboard/emacs").handler)
-    return false
-
-  $('#nokeybindings').click ->
-    editor.setKeyboardHandler()
+    $("#toolbar a.bind").each ->
+      $(@).removeClass("current")
+    $(@).addClass("current")
     return false
