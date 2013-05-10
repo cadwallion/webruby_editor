@@ -15,7 +15,14 @@ jQuery ->
 
   window.addOutput = ->
     $(lines).each (index) ->
-      $("#output").append("<p>#{lines[index]}</p>")
+      $("#output").append("<p>")
+
+      if index == $(lines).length-1
+        $("#output").append("=> ")
+
+      $("#output").append(lines[index])
+
+      $("#output").append("</p>")
 
   window.resetOutput = ->
     $("#output").html(' ')
