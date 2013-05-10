@@ -4,6 +4,7 @@
 
 body {
   background: #272822;
+  color: #fff;
   font-family: 'Monaco','Menlo','Ubuntu Mono','Consolas','source-code-pro',monospace;
   font-size: 12px;
   margin: 0;
@@ -11,6 +12,7 @@ body {
 }
 
 a {
+  color: #fff;
   text-decoration: none;
   &:hover {
    text-decoration: underline;
@@ -46,12 +48,10 @@ a {
   }
 
   #add_file {
-    color: #fff;
     float: left;
   }
 
   .session_tab {
-    color: #fff;
     padding: 5px;
   }
 
@@ -76,7 +76,6 @@ a {
     width: 500px;
 
     #output {
-      color: #fff;
       height: 100%;
 
       p {

@@ -69,3 +69,15 @@ jQuery ->
     next_session = sessions[filename]
     editor.setSession(next_session)
     return false
+
+  $('#vim').click ->
+    editor.setKeyboardHandler(ace.require("ace/keyboard/vim").handler)
+    return false
+
+  $('#emacs').click ->
+    editor.setKeyboardHandler(ace.require("ace/keyboard/emacs").handler)
+    return false
+
+  $('#nokeybindings').click ->
+    editor.setKeyboardHandler()
+    return false
