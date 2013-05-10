@@ -45,6 +45,9 @@ jQuery ->
   window.MRB = WEBRUBY
     print_level: 1
 
+  $(document).ready ->
+    interpretCode editor.getValue()
+
   interpretCode $('script[type="text/ruby"]').text()
 
 
@@ -53,8 +56,7 @@ jQuery ->
     editor.getSession().setMode("ace/mode/ruby")
     editor.setTheme("ace/theme/monokai")
     editor.commands.addCommand
-      name: 'runCode',
-      bindKey:
+      eindKey:
         win: 'Ctrl-Enter',
         mac: 'Command-Enter'
       exec: (e) ->
