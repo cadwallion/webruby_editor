@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 window.lines = []
+window.sessions = {}
 
 window.Module = {}
 window.Module['print'] = (x) ->
@@ -11,6 +12,8 @@ window.Module['print'] = (x) ->
 jQuery ->
   window.MRB = WEBRUBY
     print_level: 1
+
+  window.EditSession = ace.require("ace/edit_session").EditSession
 
   MRB.run_source($('script[type="text/ruby"]').text())
 
@@ -32,8 +35,6 @@ jQuery ->
     resetOutput()
     addOutput()
 
-
-
   if $("#editor")[0]
     editor = ace.edit("editor")
     editor.getSession().setMode("ace/mode/ruby")
@@ -50,4 +51,20 @@ jQuery ->
 
       readOnly: true
 
+    window.sessions['default.rb'] = editor.getSession()
     window.editor = editor
+
+  $('#add_file').click ->
+    console.log "FUCK"
+    new_session = new EditSession('')
+    window.sessions['untitled'] = new_session
+    editor.setSession new_session
+    $('#files').append("<a class='session_tab' href='#' data-filename='untitled'>Untitled</a>")
+
+    return false
+
+  $(document).on 'click', '.session_tab', ->
+    filename = $(@).data('filename')
+    next_session = sessions[filename]
+    editor.setSession(next_session)
+    return false
