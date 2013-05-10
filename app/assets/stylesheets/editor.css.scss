@@ -4,6 +4,8 @@
 
 body {
   background: #272822;
+  margin: 0;
+  padding: 0;
 }
 
 #header {
@@ -14,37 +16,47 @@ body {
 
 #environment {
 
+  #toolbar {
+    clear: both;
+    height: 60px;
+    margin: 0 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+  }
+
+  #add_file {
+    color: #fff;
+    float: left;
+  }
+
+  .session_tab {
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 5px;
+    text-decoration: none;
+
+     &:hover {
+      text-decoration: underline;
+     }
+  }
+
   #editor-wrapper {
     float: left;
     width: 50%;
-
-    #add_file {
-      color: #fff;
-      float: left;
-    }
-
-    .session_tab {
-      border: 1px solid #fff;
-      color: #fff;
-      padding: 5px;
-      text-decoration: none;
-
-       &:hover {
-        text-decoration: underline;
-       }
-    }
 
     #editor {
       bottom: 0;
       left: 0;
       position: absolute;
       right: 0;
-      top: 120px;
+      top: 130px;
       width: 50%;
     }
   }
 
   #output-wrapper {
+    clear: both;
     float: right;
     width: 50%;
 
@@ -56,7 +68,7 @@ body {
       height: 100%;
       position: absolute;
       right: 0px;
-      top: 60px;
+      top: 130px;
       width: 50%;
 
       p {
