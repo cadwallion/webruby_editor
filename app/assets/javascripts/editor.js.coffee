@@ -170,6 +170,9 @@ jQuery ->
     filename = $(@).data('filename')
     next_session = sessions[filename]
     editor.setSession(next_session)
+    $(".session_tab").each ->
+      $(@).removeClass("current")
+    $(@).addClass("current")
     return false
 
   $('#none').click ->
