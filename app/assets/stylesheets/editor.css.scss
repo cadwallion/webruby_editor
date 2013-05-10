@@ -18,12 +18,28 @@ body {
     float: left;
     width: 50%;
 
+    #add_file {
+      color: #fff;
+      float: left;
+    }
+
+    .session_tab {
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 5px;
+      text-decoration: none;
+
+       &:hover {
+        text-decoration: underline;
+       }
+    }
+
     #editor {
       bottom: 0;
       left: 0;
       position: absolute;
       right: 0;
-      top: 100px;
+      top: 120px;
       width: 50%;
     }
   }

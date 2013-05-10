@@ -57,6 +57,7 @@ jQuery ->
   $('#add_file').click ->
     console.log "FUCK"
     new_session = new EditSession('')
+    new_session.setMode("ace/mode/ruby")
     window.sessions['untitled'] = new_session
     editor.setSession new_session
     $('#files').append("<a class='session_tab' href='#' data-filename='untitled'>Untitled</a>")
